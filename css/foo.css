@@ -1848,6 +1848,9 @@ a:hover {
   color: var(--base0d);
 }
 
+
+/* playing with headers */
+
 h1.site-title {
   text-align: center;
 }
@@ -1857,17 +1860,8 @@ h1.headline {
   font-size: 2em;
   color: var(--base0a);
 
-
-section.categories,
-section.tags {
-  padding-left: 2rem;
-  padding-right: 2rem;
+/* non homepage logo */
+.hero-logo img {
+  width: 100%;
 }
 
-.category,
-span.category a,
-.tag,
-.tag a {
-  color: #cc99cc;
-  color: var(--base0a);
-}
