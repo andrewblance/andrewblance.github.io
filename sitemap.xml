@@ -3,68 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://andrewblance.github.io/categories/6502/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/6502/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/6502-tutorial/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/post/01-intro-to-asm/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/assembly/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/categories/bookclub/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://andrewblance.github.io/categories/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://andrewblance.github.io/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewblance.github.io/post/new-post/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
+    <loc>https://andrewblance.github.io/tags/introduction-to-6502/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://andrewblance.github.io/post/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://andrewblance.github.io/tags/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://andrewblance.github.io/tags/tests/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/categories/tests/</loc>
-    <lastmod>2019-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/categories/base16/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/tags/github/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/categories/hugo/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/tags/markdown/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/post/my-second-post/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/tags/website/</loc>
-    <lastmod>2018-11-05T13:22:14+24:00</lastmod>
+    <loc>https://andrewblance.github.io/tags/tutorial/</loc>
+    <lastmod>2019-10-13T17:24:36+01:00</lastmod>
   </url>
   
   <url>

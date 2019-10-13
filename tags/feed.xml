@@ -6,44 +6,53 @@
     <description>Recent content in Tags on Andrew&#39;s Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Oct 2019 17:24:36 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/tags/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>tests</title>
-      <link>https://andrewblance.github.io/tags/tests/</link>
-      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      <title>6502</title>
+      <link>https://andrewblance.github.io/tags/6502/</link>
+      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
       
-      <guid>https://andrewblance.github.io/tags/tests/</guid>
+      <guid>https://andrewblance.github.io/tags/6502/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>GitHub</title>
-      <link>https://andrewblance.github.io/tags/github/</link>
-      <pubDate>Mon, 05 Nov 2018 13:22:14 +2400</pubDate>
+      <title>6502 tutorial</title>
+      <link>https://andrewblance.github.io/tags/6502-tutorial/</link>
+      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
       
-      <guid>https://andrewblance.github.io/tags/github/</guid>
+      <guid>https://andrewblance.github.io/tags/6502-tutorial/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>markdown</title>
-      <link>https://andrewblance.github.io/tags/markdown/</link>
-      <pubDate>Mon, 05 Nov 2018 13:22:14 +2400</pubDate>
+      <title>assembly</title>
+      <link>https://andrewblance.github.io/tags/assembly/</link>
+      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
       
-      <guid>https://andrewblance.github.io/tags/markdown/</guid>
+      <guid>https://andrewblance.github.io/tags/assembly/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>website</title>
-      <link>https://andrewblance.github.io/tags/website/</link>
-      <pubDate>Mon, 05 Nov 2018 13:22:14 +2400</pubDate>
+      <title>Introduction to 6502</title>
+      <link>https://andrewblance.github.io/tags/introduction-to-6502/</link>
+      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
       
-      <guid>https://andrewblance.github.io/tags/website/</guid>
+      <guid>https://andrewblance.github.io/tags/introduction-to-6502/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorial</title>
+      <link>https://andrewblance.github.io/tags/tutorial/</link>
+      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/tags/tutorial/</guid>
       <description></description>
     </item>
     
