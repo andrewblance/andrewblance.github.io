@@ -6,10 +6,19 @@
     <description>Recent content in 6502 on Andrew&#39;s Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Oct 2019 17:24:36 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Oct 2019 18:20:01 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/tags/6502/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Binary Numbers and Data Representation</title>
+      <link>https://andrewblance.github.io/post/02-binary/</link>
+      <pubDate>Tue, 22 Oct 2019 18:20:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/post/02-binary/</guid>
+      <description>Bookclub Week 2 In week 1 we got to see a very brief look at how assembly, and specifically the 6502 variant, works. We built up an idea of what assembly is from the most basic binary patterns that a processor will want to accept. We then touched on the idea that a computer program will be made up of three parts: these instructions, data and memory locations. To get a good idea of how to effectively program the 6502 we will need to get a better understanding of all them.</description>
+    </item>
     
     <item>
       <title>An Introduction to 6502 Assembly!</title>

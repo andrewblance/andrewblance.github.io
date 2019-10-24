@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+
+<meta name="description" 
+content= "My Personal Webpage - Theoretical Physicist at the IPPP in Durham" >
+
+<title>Binary Numbers and Data Representation - Andrew&#39;s Webpage</title>
+
+
+<meta name="keywords" 
+content = "binary, ASCII, 6502, tutorial" >
+
+
+<meta name="author" 
+content="map[]">
+
+<meta name="generator" content="Hugo 0.58.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://andrewblance.github.io/academicons/css/academicons.css"/>
+<link rel="alternate" type="application/rss+xml" href='https://andrewblance.github.io/feed.xml' />
+
+<link rel="stylesheet" href="https://andrewblance.github.io/css/foo.css">
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Andrew&#39;s Webpage">
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<link rel="shortcut icon" href="https://andrewblance.github.io//favicon.ico">
+
+</head>
+
+
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css"
+  integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv"
+  crossorigin="anonymous"
+>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.js"
+  integrity="sha384-483A6DwYfKeDa0Q52fJmxFXkcPCFfnXMoXblOkJ4JcA8zATN6Tm78UNL72AKk+0O"
+  crossorigin="anonymous"
+></script>
+
+<script defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/contrib/auto-render.min.js"
+  integrity="sha384-yACMu8JWxKzSp/C1YV86pzGiQ/l1YUfE8oPuahJQxzehAjEt2GiQuy/BIvl9KyeF"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+
+
+
+<body>
+
+<header>
+  <div class="container clearfix">
+
+  
+   <a class="path" href="/">[Andrew&#39;s Webpage]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/posts/">[Posts]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/aboutme/">[About_Me]</a>
+   <span class="caret"> ; </span>
+  
+  
+  </div>
+</header>
+
+<div class="container">
+
+
+
+
+<main role="main" class="article">
+  
+
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2019-10-22">October 22, 2019</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/bookclub">bookclub</a>
+
+        <a href="/categories/6502">6502</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/binary">binary</a>
+
+        <a href="/tags/ascii">ASCII</a>
+
+        <a href="/tags/6502">6502</a>
+
+        <a href="/tags/tutorial">tutorial</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">Binary Numbers and Data Representation</h1>
+  <section class="body" itemprop="articleBody">
+    <h2 id="bookclub-week-2">Bookclub Week 2</h2>
+
+<p>In week 1 we got to see a very brief look at how assembly, and specifically the 6502 variant, works. We built up an idea of what assembly is from the most basic binary patterns that a processor will want to accept. We then touched on the idea that a computer program will be made up of three parts: these instructions, data and memory locations. To get a good idea of how to effectively program the 6502 we will need to get a better understanding of all them.</p>
+
+<p>One of the many cool things about the 6502 is the numerous methods it can access locations in memory. Some of the methods though are slightly obtuse and can be hard to understand when beginning to learn. For this reason, we will wait until we have explored more of the architecture to delve into this part. The next option would be to go straight into learning the instruction set. However, without knowing how the input and output data behave we would not be able to fully appreciate what is happening. The last option then is to look at how data will be represented in our programs.</p>
+
+<p>This week, we will take a long look at binary numbers. Here, we will aim to build up our understanding of binary, looking at where problems in the system lay and how different types of binary get around them. Then, we will look at ASCII and hexadecimal to round out different ways we can interact with the 6502. This won't be a complete look at all representation the processor can understand but it will give us a knowledge of the (in my opinion) most useful.</p>
+
+<h2 id="binary">Binary</h2>
+
+<p>Binary is something that is not necessary to know when doing modern, high-level programming. The 6502 can do many operations (add, subtracting, moving things in memory) for which you do not need to understand how binary works as well. However, other operations we might like to do, such as multiplication and divide, are not things the 6502 can do natively. We need to create these functions ourselves. This will require some understanding of the intricacies of binary calculation. At a very minimum being familiar reading binary numbers and with terms like bit, byte and nibble will be useful to understand generally how the 6502 operates.
+Not least because internally, the 6502 will represent everything in the form of binary. We saw this when we discussed how the processor will try to &quot;translate&quot; everything down to binary patterns. Luckily though for us, binary is intuitive and fun.</p>
+
+<p>As of right now, the only practical way to store data in electronics is in a form of two-state logic. Something can either be &quot;On&quot; or &quot;Off&quot;, &quot;True&quot; or &quot;False&quot;. In a computer a singular binary digit, the most basic way to store information is called a <em>bit</em>. A bit can either be a <code>1</code> or a <code>0</code>. Data in a computer is stored in groups of bits. In many cases, such as the 6502, the prefered way is in a group of eight (something like <code>0001 0101</code>. This is called a <em>byte</em>. We can also have a smaller grouping of four bits called a <em>nibble</em> (lol).</p>
+
+<p>To adequately represent numeric data a few cases need to be looked at. Firstly, we will begin with unsigned binary. The eight bits ( <span  class="math">\(b\)</span> ) of one byte will be represented as:</p>
+
+<p><span  class="math">\[b_{7}b_{6}b_{5}b_{4}b_{3}b_{2}b_{1}b_{0}\]</span></p>
+
+<p>Here, the right most bit represents 2<sup>0</sup>, the next one to the left is 2<sup>1</sup>, then 2<sup>2</sup>, and so on. It will therefore be useful to remember the powers of 2, which are:</p>
+
+<p><span  class="math">\[ 2^7 = 128,\;2^6 = 64,\;2^5 = 32,\;2^4 = 16,\;2^3 = 8,\;2^2 = 4,\;2^1 = 2,\;2^0 = 1 \]</span></p>
+
+<p>To translate from binary to something we recognise we will need to sum all the appropriate powers of 2. If a bit is set to <code>1</code> we will include the corresponding power in our sum, if not we will discard it. This may already seem complicated, but looking at an example will hopefully help clear it up. If we take the binary number <code>0010 0011</code> we can see the only bits set are 0, 1 and 5. We can then &quot;sum&quot; the as such:</p>
+
+<p><span  class="math">\[ 
+\begin{aligned}
+ &  \quad b_{5} + b_{1} + b_{0} \\
+ &  = 2^{5} + 2^{1} + 2^{0} \\
+ &  = 32 + 2 + 1 \\
+ &  = 35 
+\end{aligned}
+\]</span></p>
+
+<p>You can also try go the other way, from decimal to binary. We do this by dividing the number by two multiple times and tracking the remainder. The remainder being 1 or 0 will map to the bits in a byte. For example, if you divide 35 by 2 you get 17 remainder 1. Therefore, bit 0 will be a 1. Again, this calculation is less strange than it sounds when you see it performed. Lets try 35 (or <code>0010 0011</code>) again:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& 35 \div 2 = 17 r 1 \rightarrow 1 \\
+& 17 \div 2 =\enspace8 r 1 \rightarrow 1 \\
+&\enspace8 \div 2 =\enspace4 r 0 \rightarrow 0 \\
+&\enspace4 \div 2 =\enspace2 r 0 \rightarrow 0 \\
+&\enspace2 \div 2 =\enspace1 r 0 \rightarrow 0 \\
+&\enspace1 \div 2 =\enspace0 r 1 \rightarrow 1 \\
+&\enspace0 \div 2 =\enspace0 r 0 \rightarrow 0 \\
+&\enspace0 \div 2 =\enspace0 r 0 \rightarrow 0 \\
+\end{aligned}
+\]</span></p>
+
+<p>This method give us a result of <code>0010 0011</code>, which is exactly what we started with!</p>
+
+<h3 id="addition">Addition</h3>
+
+<p>Now that we are comfortable reading and writing binary numbers we are going to want to try do some math with them. Addition works &quot;normally&quot;. When you add two normal numbers (lets try 9 and 2) you &quot;carry&quot; everything that goes above ten to the next digit. So, 9 + 2 will give you 11. In binary you perform a similar process. Single bits follow these rules:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& 0 + 0 = \quad\;0 \\
+& 1 + 0 = \quad\;1 \\
+& 0 + 1 = \quad\;1 \\
+& 1 + 1 = (1)0 \\
+\end{aligned}
+\]</span></p>
+
+<p>The <span  class="math">\((1)\)</span> represents a carry. Its the same as us saying 9 + 2 = (1)1. Using what we have learnt before we can see that <span  class="math">\(10\)</span> is the binary equivilent of 2, exactly what we would expect!</p>
+
+<p>If we try to do 3 (<code>0011</code>) + 1 (<code>0001</code>) we can see another example of how carrying in binary works:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\; 0011 \\
+& \underline{+0001} \\
+& \enspace\; 0100 \\
+\end{aligned}
+\]</span></p>
+
+<p>We can see here something has carried from the 1st bit to the 2nd. What if we add a larger number? Let's try 128 and 129:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\;\; 1000 0001 \\
+& \;\underline{+1000 0000} \\
+& (1) 0000 0001\\
+\end{aligned}
+\]</span></p>
+
+<p>We have now encountered our first problem! We know the answer should be 257, however, looking at what is in the first 8 bits it looks like the answer is 1. Only with the extra carry bit does the true answer become apparent. The problem is how do we store this? The 6502 provides a solution, phew! The 6502 has a set of flags built within it, one of which is called the Carry Flag. This can be set as 1 or 0. Whenever an addition happens for unsigned (numbers that don't have a way of saying if they are positive or negative) binary numbers that result in the answer being greater than 256 the Carry Flag is set to 1. This allows us to keep track of our maths and gives us a way to extend our additions past 8-bit numbers.</p>
+
+<p>So, our binary numbers can add correctly, and we can represent our positive integers correctly. However, there are two problems:</p>
+
+<ul>
+<li>We can only go up to 255 (if we only use 8 bits).</li>
+<li>We can only represent positive numbers.</li>
+</ul>
+
+<p>We need to be able to solve the latter issue. To do this we will introduce Signed Binary.</p>
+
+<h3 id="signed-binary">Signed Binary</h3>
+
+<p>For unsigned binary, all 8-bits were used to store the value. This allowed us to have a range between 0 and 256. In signed binary, we will use bit 7 as a way to keep track of the sign of the number. However, this will come at the expense of a reduced maximum value our values can take.</p>
+
+<p>In this new system, we will say that 1 is: <code>0000 0001</code> and -1 is: <code>1000 0001</code>. Immediately, we have reduced the magnitude from 255 to 127 (oops) but we do have a way to represent negative numbers. Let us now go back and try doing a calculation with this new method. This is <span  class="math">\(7\)</span> + <span  class="math">\(-5\)</span>:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\; 0000 0111 \\
+& \underline{+1000 0101} \\
+& \enspace\; 1000 1100 \\
+\end{aligned}
+\]</span></p>
+
+<p>Again, we have a problem, <code>1000 1100</code> is <span  class="math">\(-12\)</span>. This is wrong. To find a solution to this we will need to get to <em>two's complement</em>. To get to this point we will first have to introduce <em>one's complement</em>.</p>
+
+<h3 id="one-and-twos-complement">One and Two's Complement</h3>
+
+<p>In <strong>One's Complement</strong> the positive number stays the same, ie, 1 is still<code>0000 0001</code>.
+However, to get the negative we &quot;swap&quot; all the bits - all 0's become 1's and all 1's become 0's. This means -1 is: <code>1111 1110</code>. As with signed binary, all positive numbers start with 0 and all negatives start with 1.</p>
+
+<p>Lets try adding <span  class="math">\(-4\)</span> and <span  class="math">\(+6\)</span>:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\; 1111 1011 \\
+& \underline{+0000 0110} \\
+& \enspace\; 0000 0001 \\
+\end{aligned}
+\]</span></p>
+
+<p>We have got a result of <span  class="math">\(1\)</span>, instead of <span  class="math">\(2\)</span>. Wrong, but we are getting there. We will have to expand one's complement before we get correct addition.</p>
+
+<p>To arrive at <strong>Two's Complement</strong> you transform your value to One's Complement, then, for the negative number, add 1. So, 3 is <code>0000 0011</code> while -3 is <code>1111 1101</code>.</p>
+
+<p>Lets try adding <span  class="math">\(-4\)</span> and <span  class="math">\(6\)</span> again:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\; 1111 1100 \\
+& \underline{+0000 0110} \\
+& \enspace\; 0000 0010 \\
+\end{aligned}
+\]</span></p>
+
+<p>Which gives us 2, so now, finally, everything works! Getting here was slightly convoluted but two's complement is a popular and widely used way to represent binary numbers. Below is a table of two's complements with some 16-bit values shown as well.</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-45bdef8dceb3a39b14445fc2149c1515">
+  <a href="https://andrewblance.github.io/post/02-binary/twos.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/02-binary/twos_hu8b954344a68ccf5bb13a5d52497ae9a0_526403_1000x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-45bdef8dceb3a39b14445fc2149c1515">
+    Two&rsquo;s Complements table <a href="https://introcs.cs.princeton.edu/java/61data/">Credits</a>.
+  </figcaption>
+</figure>
+
+
+<h3 id="the-overflow">The Overflow</h3>
+
+<p>We saw that when adding unsigned numbers there can be a problem where we need to keep track of the carry. This was handled by the 6502's built-in Carry Flag. A similar problem can happen with signed binary numbers too. Here is 64 + 65:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+& \enspace\; 0100 0000 \\
+& \underline{+0100 0001} \\
+& \enspace\; 1000 0001 \\
+\end{aligned}
+\]</span></p>
+
+<p>This has given us an answer of -127. When the result of signed binary addition should be either &gt;127 or &lt;-127 we get an Overflow. This looks to us like two positive numbers summing to a negative, or two negatives summing to a positive. Again, the 6502 has a way to deal with this. The Overflow flag will set when what is being carried into bit 7 does not match what is being carried out. Signed numbers can also set the Carry Flag too, whenever the result of the sum will need to be stored in more than 8-bits.</p>
+
+<p>So, what should you do if you set the Overflow flag - what is the solution? Well, an unexpected overflow in practice is an exception and should not happen too often. While the flag is there to tell you something has gone wrong it is not going to help you fix it. You may need to go back, check your inputs and decide on the correct answer yourself.</p>
+
+<p>Something neat is that when adding, the 6502 cannot tell the difference between signed and unsigned binary - it makes no distinction. During calculation, the flags are set automatically. We able then to use either signed or unsigned numbers, whatever we prefer. It is then also up to us, as the programmers, to be able to tell if the Carry and Overflow Flags being set are relevant to our problem. We have just discussed addition so far but it should be said that all this is (mostly) true for subtraction as well. It can take a while to convince yourself how Carry and the Overflow works, it did for me at least. I have left a few really useful links at the bottom to help get a better understanding of the problem.</p>
+
+<h2 id="hexadecimal">Hexadecimal</h2>
+
+<p>Know we understand more about the carry flags and how the 6502 will try to calculation we can try to find a nicer way to represent the data. Binary is nice, but it can be mentally taxing to have to read and write it. The way we will improve this is by making a switch to hexadecimal. Here, the decimal digits 0 to 15 are represented by the symbols <span  class="math">\(0\)</span> to <span  class="math">\(9\)</span>, then <span  class="math">\(A\)</span> to <span  class="math">\(F\)</span>. This range allows us to make the most of a nibble (4-bits, remember?!), using each combination to represent a symbol. For example, <span  class="math">\(A\)</span> would become <code>1010</code> and <span  class="math">\(F\)</span> would be <code>1111</code>. Therefore, we can use a byte to hold 2 digits. We can convert from a hexadecimal digit (like <span  class="math">\(FA\)</span>) to decimal easily. You multiply the first digit by 16<sup>1</sup>, the second by 16<sup>0</sup> and then sum! For example:</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+FA = 15 \times 16^1 + 10 \times 16^0 = 250
+\end{aligned}
+\]</span></p>
+
+<p>Now, as we write our code for the 6502 we will aim to use hexadecimal to represent numbers. The same issues we discussed may still exist but trying to understand the data will be less difficult than if it were all just ones and zeroes. I have included a decimal-to-binary-to-hexadecimal table to give a better idea of how the representations relate to each other.</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-74db1baa6eb0045d4b60a6726998188e">
+  <a href="https://andrewblance.github.io/post/02-binary/hex.jpg" class="img-link">
+    <img src="https://andrewblance.github.io/post/02-binary/hex_hu437f651e4086b72a723fb6521da3de38_21225_1000x0_resize_q75_box.jpg", class="center">
+  </a>
+  <figcaption id="caption-74db1baa6eb0045d4b60a6726998188e">
+    Hexadecimal table <a href="https://www.pinterest.co.uk/pin/419327415280550717">Credits</a>.
+  </figcaption>
+</figure>
+
+
+<h2 id="alphanumeric-data">Alphanumeric Data</h2>
+
+<p>We have discussed how binary and hexadecimal is used to represent numbers but we also require an encoding for other symbols too. For this, we will use ASCII. We will want to encode the 26 letters in both upper and lower case, plus 10 numbers, and then around 20 special symbols. This can all be accomplished in 7 bits (which allows for 128 unique codes). The eighth bit could then (if you wanted..) be used to verify that the contents of the byte have not been accidentally changed. This bit is called the <em>parity bit</em>. For reference, here is a table with all the ASCII encodings that will be of use for us:</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-0020b09d50c75caa03218cc0cef55955">
+  <a href="https://andrewblance.github.io/post/02-binary/ascii.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/02-binary/ascii_hub5fb3e959e3459c329d826a1d165a7f3_35643_1000x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-0020b09d50c75caa03218cc0cef55955">
+    ASCII table <a href="https://en.wikipedia.org/wiki/ASCII">Credits</a>.
+  </figcaption>
+</figure>
+
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>I have tried to give a brief look at how data can be represented in the 6502. It has been a longer piece than I originally expected but it is still by no means an exhaustive list. Other forms exist in the form of BCD, EBCDIC and octadecimal. I decided to not talk about these though as binary, hexadecimal and ASCII are all we will need for the moment. For some things (NES dev, for example) BCD compatibility is removed.</p>
+
+<p>My original goal was to combine this with a discussion on 6502 hardware. As I started writing this though and realised the length I decided to save it for another time. How we represent data is important here and by starting to learn about the internal flags in the processor we have a good motivation to learn more about the architecture next week.</p>
+
+<p>the end.</p>
+
+<hr>
+
+<p>[1] <a href="http://www.righto.com/2012/12/the-6502-overflow-flag-explained.html">http://www.righto.com/2012/12/the-6502-overflow-flag-explained.html</a></p>
+
+<p>[2] <a href="http://6502.org/tutorials/vflag.html#2.4">http://6502.org/tutorials/vflag.html#2.4</a></p>
+
+<p>[3] <a href="https://planetcalc.com/747/">https://planetcalc.com/747/</a></p>
+
+  </section>
+
+  <div style="text-align: center">
+
+    keep up to date:
+    <ul class="icons", style="font-family: FontAwesome">
+    <a href="https://andrewblance.github.io/feed.xml" class="icon fa-rss fa-2x" type="application/rss+xml">
+        <span class="label">RSS</span></a>
+    </ul>
+
+</div>
+
+<br>
+<div class="hero-logo">
+  <img src="/img/base16-eighties.svg">
+</div>
+<br>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'andrew-webpage';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2019 Andrew&#39;s Webpage - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

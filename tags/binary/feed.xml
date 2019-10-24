@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bookclub on Andrew&#39;s Webpage</title>
-    <link>https://andrewblance.github.io/categories/bookclub/</link>
-    <description>Recent content in bookclub on Andrew&#39;s Webpage</description>
+    <title>binary on Andrew&#39;s Webpage</title>
+    <link>https://andrewblance.github.io/tags/binary/</link>
+    <description>Recent content in binary on Andrew&#39;s Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Oct 2019 18:20:01 +0100</lastBuildDate>
     
-	<atom:link href="https://andrewblance.github.io/categories/bookclub/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewblance.github.io/tags/binary/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://andrewblance.github.io/post/02-binary/</guid>
       <description>Bookclub Week 2 In week 1 we got to see a very brief look at how assembly, and specifically the 6502 variant, works. We built up an idea of what assembly is from the most basic binary patterns that a processor will want to accept. We then touched on the idea that a computer program will be made up of three parts: these instructions, data and memory locations. To get a good idea of how to effectively program the 6502 we will need to get a better understanding of all them.</description>
-    </item>
-    
-    <item>
-      <title>An Introduction to 6502 Assembly!</title>
-      <link>https://andrewblance.github.io/post/01-intro-to-asm/</link>
-      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
-      
-      <guid>https://andrewblance.github.io/post/01-intro-to-asm/</guid>
-      <description>Bookclub Week 1 For this session of my office&amp;rsquo;s book club I&amp;rsquo;m going to be looking at the 6502 assembly programming language. Each week I&amp;rsquo;ll try explain a little more about assembly and how to write it. I&amp;rsquo;m not sure if the structure will change from week to week, or how I will split up the topics but I like the idea of using my webpage to host the content.</description>
     </item>
     
   </channel>
