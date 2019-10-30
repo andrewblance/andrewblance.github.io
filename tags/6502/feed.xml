@@ -6,10 +6,19 @@
     <description>Recent content in 6502 on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Oct 2019 18:20:01 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 30 Oct 2019 19:56:01 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/tags/6502/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The 6502 (sixty-five-oh-two)</title>
+      <link>https://andrewblance.github.io/post/03-6502/</link>
+      <pubDate>Wed, 30 Oct 2019 19:56:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/post/03-6502/</guid>
+      <description>Bookclub Week 3 Assembly language is strongly linked to the architecture it is written on. Everything you write will, on some level, depend on the instruction set and hardware of the processor. To write a program you won&amp;rsquo;t require a deep knowledge of how the 6502 works, but to write an efficient one you will. We have begun to see this already. In week one we saw how instructions can be different on different machines and in week 2 we saw how the hardware enables us to compute things more easily.</description>
+    </item>
     
     <item>
       <title>Binary Numbers and Data Representation</title>

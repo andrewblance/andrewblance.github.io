@@ -3,13 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://andrewblance.github.io/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://andrewblance.github.io/categories/6502/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://andrewblance.github.io/tags/6502/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/architecture/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/categories/bookclub/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/categories/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/post/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/stack/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/post/03-6502/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://andrewblance.github.io/tags/tutorial/</loc>
+    <lastmod>2019-10-30T19:56:01+01:00</lastmod>
   </url>
   
   <url>
@@ -24,36 +69,6 @@
   
   <url>
     <loc>https://andrewblance.github.io/post/02-binary/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/categories/bookclub/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/categories/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/post/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/tags/</loc>
-    <lastmod>2019-10-22T18:20:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://andrewblance.github.io/tags/tutorial/</loc>
     <lastmod>2019-10-22T18:20:01+01:00</lastmod>
   </url>
   

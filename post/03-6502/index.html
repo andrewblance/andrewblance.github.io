@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+
+<meta name="description" 
+content= "It&#39;s time to look at the architecture of the 6502. This will allow us to see how dependent the software we write will be on the hardware capabilities." >
+
+<title>The 6502 (sixty-five-oh-two) - Andrew Blance</title>
+
+
+<meta name="keywords" 
+content = "architecture, stack, 6502, tutorial" >
+
+
+<meta name="author" 
+content="map[]">
+
+<meta name="generator" content="Hugo 0.58.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://andrewblance.github.io/academicons/css/academicons.css"/>
+<link rel="alternate" type="application/rss+xml" href='https://andrewblance.github.io/feed.xml' />
+
+<link rel="stylesheet" href="https://andrewblance.github.io/css/foo.css">
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Andrew Blance">
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<link rel="shortcut icon" href="https://andrewblance.github.io//favicon.ico">
+
+</head>
+
+
+
+<body>
+
+<header>
+  <div class="container clearfix">
+
+  
+   <a class="path" href="/">[Andrew Blance]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/posts/">[Posts]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/aboutme/">[About_Me]</a>
+   <span class="caret"> ; </span>
+  
+  
+  </div>
+</header>
+
+<div class="container">
+
+
+
+
+<main role="main" class="article">
+  
+
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2019-10-30">October 30, 2019</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/bookclub">bookclub</a>
+
+        <a href="/categories/6502">6502</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/architecture">architecture</a>
+
+        <a href="/tags/stack">stack</a>
+
+        <a href="/tags/6502">6502</a>
+
+        <a href="/tags/tutorial">tutorial</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">The 6502 (sixty-five-oh-two)</h1>
+  <section class="body" itemprop="articleBody">
+    
+
+<h2 id="bookclub-week-3">Bookclub Week 3</h2>
+
+<p>Assembly language is strongly linked to the architecture it is written on. Everything you write will, on some level, depend on the instruction set and hardware of the processor. To write a program you won&rsquo;t require a deep knowledge of how the 6502 works, but to write an efficient one you will. We have begun to see this already. In week one we saw how instructions can be different on different machines and in week 2 we saw how the hardware enables us to compute things more easily. This week we will take a look at the 6502 directly. We will start to be able to piece everything we have learned so far together. As we continue in the following weeks we will be able to refer back to here as well, and further appreciate the links between the hardware and software we come to write.</p>
+
+<p>I feel an aim of this is to provide a broad overview of the entire system. To do this we need to see not only how 6502 Assembly can be written but also how the 6502 hardware works. Understanding, in its entirety, how a modern processor works probably would not be possible. Here, however, we can get a really good idea of how the hardware works. When we write code we will be able to say, on a very elementary level, what is going on.</p>
+
+<p>To accomplish this we will discuss the following figure:</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-957579a4255737d36680b858a4f20890">
+  <a href="https://andrewblance.github.io/post/03-6502/micro.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/03-6502/micro_hu328f3039920096b95d0aca18c9eccdd2_215609_700x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-957579a4255737d36680b858a4f20890">
+    Generic microprocessor layout. Credits: Zaks.
+  </figcaption>
+</figure>
+
+
+<p>This is the layout of a standard microprocessor of the era. We will go through it bit by bit, trying to understand it all.</p>
+
+<h2 id="data-buses">Data Buses</h2>
+
+<p>We will begin outside of the microprocessor unit (MPU), with the data buses. A computer bus has the job of transferring data and signal around the machine. In the 6502, they are three of them:</p>
+
+<ul>
+<li><p>The <em>data-bus</em>: As the name might suggest, this transfers data around. The data-bus is 8-bits wide, which means it can only carry 8 bits at a time. If you want to carry more data than that two separate signals will have to be sent down the bus. Usually, it will carry data from memory to the MPU, from the MPU to memory, or the MPU to an Input/ Output device.</p></li>
+
+<li><p>The <em>address-bus</em>: This bus carries addresses. These address will usually be a source, or a destination, for data. The address bus also differs from the data-bus as it is 16-bits wide. This means you can access any 16-bit address. Practically, this means you only have access to ~64000 addresses. After you have stored something in them all, that&rsquo;s it! No more memory! Interestingly, this has been a problem up to quite recently - even modern 32-bit computers can only natively access around 3gb of ram (this problem is called the 3gb barrier).</p></li>
+
+<li><p>The <em>control-bus</em>: The control bus will try to keep everything inside the machine synced up. Here, it has been removed for simplicity.</p></li>
+</ul>
+
+<h2 id="mpu-and-registers">MPU and Registers</h2>
+
+<p>The MPU in the above figure, in our case, is the 6502. It contains the arithmetic-logical-unit (ALU), the control-unit (CU) and the registers (the flags we saw in week 2). The CU has control over how the processor operates. It decides when it receives an instruction, data or an address how to interpret it.</p>
+
+<p>Below, is a figure showing the internals of the 6502 (sans the CU). Outside of this, it will also require precise timing. This is why it is connected to a timer in the above figure.</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-425323f72b16cf906242060348499c66">
+  <a href="https://andrewblance.github.io/post/03-6502/internal.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/03-6502/internal_hu662e4f381519813bf419b68d1f9e1b94_10607_1000x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-425323f72b16cf906242060348499c66">
+    Internals of the MPU (the 6502) <a href="https://www.atariarchives.org/roots/chapter_3.php">Credits</a>.
+  </figcaption>
+</figure>
+
+
+<p>Let&rsquo;s go through this diagram, right to left, and discuss what is going on.</p>
+
+<p>The <em>ALU</em> has a recognisable &lsquo;V&rsquo; shape. Its role in the 6502 is to perform the calculations. It will accept two inputs, one in the &lsquo;left input&rsquo; and one into the &lsquo;right input&rsquo;. With these is can do addition (the <code>ADC</code> instruction) or subtraction (the <code>SBC</code> instruction). The left input of the ALU is connected to the accumulator, the A register. When doing logical or arithmetic operations usually one of the values is stored in the accumulator and the other somewhere in memory. The result of whatever operation will then also, usually, be stored in the accumulator. It is after this accumulating behaviour the register gets its name.</p>
+
+<p>The next two parts are the 8-bit <em>X</em> and <em>Y</em> registers. These are used frequently as ways to store values. They are useful as the 6502 comes with several instructions to manipulate them. Among these are <code>INX</code> which will increment X up 1, <code>DEY</code> which reduces Y by 1 and <code>TXA</code> which transfers the contents of X to A. Having this variety registers gives us  ways to move and modify data without having to specify a memory location. We will later this chapter that this can improve the speed of the code we write.</p>
+
+<p>Then, there is a range of registers stored in <em>P</em>:</p>
+
+<ul>
+<li>N: keeps track if the result in the ALU is negative</li>
+<li>V: the overflow flag!</li>
+<li>B: used to handle breaks (we will discuss this more in a later post)</li>
+<li>D: this helps handle BCD numbers. This is a different way to represent data. We will not discuss it here.</li>
+<li>I: this tracks how interrupts will be handled (we will discuss this more in a later post)</li>
+<li>Z: keeps track if the result of a calculation is zero</li>
+<li>C: the carry flag!</li>
+</ul>
+
+<p>Having all these registers allow us to keep track of data and make comparisons. For example, we might want to branch to a different part of our program if the result of a calculation is zero. By checking the Z register we have a way to know. Some of these registers make use of certain instructions (<code>BRK</code> sets B to 1). As we encounter these I will describe the effect on the register.</p>
+
+<p>The <em>Stack-Pointer</em> (SP), points to a specific bit in a place in memory called the stack. Using it we can keep track of where in the stack we are. I will go into more detail about this when we discuss the stack later in this post.</p>
+
+<p>Finally, the <em>Program-Counter</em> (PC) is a 16-bit registry. It has the important job of storing the next instruction that needs to be carried out. Let&rsquo;s look more into this right now.</p>
+
+<h2 id="instructions-and-the-program-counter">Instructions and the Program Counter</h2>
+
+<p>As we run a program the processor be in a constant cycle of fetching instructions then decoding and executing them.</p>
+
+<p>Fetch: In this step, the contents of PC deposited onto the address bus. Then, the instruction at this location is put on the data-bus. The processor reads this and puts in a special internal register called the <em>instruction-register</em> (IR). The fetch cycle is now finished!</p>
+
+<p>Decode and execute: With the appropriate instruction in the IR, the CU can begin to decode it. At this point, it can generate the signals needed to carry out the instruction. The length of time this takes will differ depending on what is being generated. Some instructions can happen inside the MPU (for example, <code>INX</code>), whereas some will need something else from memory (ie, data or a memory address). The duration of an instruction is measured in clock cycles. The 6502 uses a one-megahertz clock, therefore a clock cycle takes 1 microsecond.</p>
+
+<p>Finally, the PC will be incremented and the next instruction loaded into it. Now, the cycle can begin again.</p>
+
+<p>Usually, the first cycle will read the opcode, the next two will read the 16-bit address, then a fourth will read the appropriate piece of data. Of course, depending on the instruction this number will change.</p>
+
+<h2 id="memory-maps">Memory Maps</h2>
+
+<p>We have discussed how with a 16-bit address bus we can reach 65,535 different locations in memory. While we access each of these addresses with the same methods that does not mean that every section of memory is used for the same purpose. The 64,535 addresses are divided into <em>pages</em>. Each page is a block of 256. This means that from address 0 to 255 (or 0 to 100 in hexadecimal) is page 0, address 256 to 511 is page 1, and so on. In your code you will, therefore, be tracking the page you are on and your location within a page. As you cross a page boundary (eg, go from page 12 to 13) it can result in needing to execute an extra instruction. This is because you are not just updating your location within the page, but the page number as well.</p>
+
+<p>Certain pages within the 6502&rsquo;s memory are there to perform specific tasks. A memory map is a figure that describes how the locations in your system are meant to be used. Regardless of what 6502 system you are using (Apple ii, c64, NES, etc..) a lot of the functionality will be the same. However, the memory map will be different. Below is a very generic 6502 memory map</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-243993f8a3fbdf24d006e08d7a1d84a2">
+  <a href="https://andrewblance.github.io/post/03-6502/mmap.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/03-6502/mmap_huc091da78571de4c8a9147b6a1ea96b65_3642_200x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-243993f8a3fbdf24d006e08d7a1d84a2">
+    Generic 6502 memory map <a href="https://www.ele.uva.es/~jesus/6502copy/proto.html">Credits</a>.
+  </figcaption>
+</figure>
+
+
+<p>The first page in the 6502 has an important position. The <em>zero-page</em>, which ranges from 0 to 255, is the only area in memory that can be accessed with an 8-bit address. Since parsing an 8-bit address is quicker than parsing a 16-bit one, the zero-page becomes an area in memory where data can be read and written to more efficiently. Therefore, it is sensible to store important data there that will need to be read a lot.</p>
+
+<p>The second page is also very important. The <em>Stack</em> ranges from 256 to 511. This area of memory is a last-in-first-out (LIFO) list. Effectively, this means that you can only retrieve from the stack the last thing you deposited into it. It is like a neat pile of papers on a desk, you can only ever access the top one. We then have a stack pointer (the register S) that points us to the memory address at the top of this pile. The 6502 even gives us some manual control, allowing us to push and pull things to the stack at will using <code>PHA</code> and <code>PLA</code>. It might seem strange why you would want an area of memory like this. Only being able to retrieve the last item you deposited seems like it could make this a page of memory quite niche. However, we will see as we progress that the stack is a fundamental part of memory. It is used to track subroutines and interrupts and provides an area of highly efficient memory. We will see all of these applications in later chapters.</p>
+
+<p>The next page is reserved for I/O devices. Accessing these areas of memory will allow us to interact with the outside world. Data here would correspond to external devices. Reading and writing to these memory locations would allow us to communicate with printers, game controllers and other peripherals.</p>
+
+<p>In this diagram, the Random Access Memory (RAM) is mapped to $0300 to $E000 (these are hex values, remember!). This is an area we can write data to.</p>
+
+<p>The locations between $E000 and $FFFF are mapped to Read Only Memory (ROM). As the name suggests, we cannot write to here. In fact, any attempt to do so will simply be ignored. An example of ROM would be data stored on a game cartridge. As the console is booted up this memory can be read, but obviously cannot be written to or else the game data would be changed. If you wanted to modify something in ROM it would first need to be transferred into RAM.</p>
+
+<p>It is up to us, the programmers, to keep track of where the data is stored and if it is stored appropriately. As we change from system to system we will also need to be aware that memory may be mapped differently.</p>
+
+<p>We will end the discussion on memory with a slightly different topic: <em>endianness</em>. Whether a processor and language are little-endian or big-endian is based on how it orders bytes within a number. For example, a little-endian system will place the most significant bit of a number on the right. It takes 2 bytes to store the hexadecimal number ABCD. As the 6502 is little-endian the 2 bytes will, therefore, be ordered: CD, AB. Big-endian machines do the opposite. This will become important as we start to write code ourselves.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>This week we have had a look at the main parts of the 6502&rsquo;s hardware. Important for us right now is the large range of registers and the memory map that the 6502 gives us. These have a very strong impact on what we can do with the machine. As we delve into the instruction set and write programs ourselves we will see how interlinked our software will be to the hardware. At the moment it might seem like we have learnt a lot of different and unrelated ideas but as we progress we will see how it all fits together.</p>
+
+<p>Now, with knowledge of the hardware and how data is represented next week we will move onto writing some code! A set of very simple programs will be shown to broaden our knowledge of the instruction set and allow us to get a better idea of how assembly is written. Then, the following week we will aim to run this code on our computers!</p>
+
+<p>the end.</p>
+
+  </section>
+
+  <div style="text-align: center">
+
+    keep up to date:
+    <ul class="icons", style="font-family: FontAwesome">
+    <a href="https://andrewblance.github.io/feed.xml" class="icon fa-rss fa-2x" type="application/rss+xml">
+        <span class="label">RSS</span></a>
+    </ul>
+
+</div>
+
+<br>
+<div class="hero-logo">
+  <img src="/img/base16-eighties.svg">
+</div>
+<br>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'andrew-webpage';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2019 Andrew Blance - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
