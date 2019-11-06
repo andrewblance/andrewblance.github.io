@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>assembly on Andrew Blance</title>
-    <link>https://andrewblance.github.io/tags/assembly/</link>
-    <description>Recent content in assembly on Andrew Blance</description>
+    <title>programming on Andrew Blance</title>
+    <link>https://andrewblance.github.io/tags/programming/</link>
+    <description>Recent content in programming on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 03 Nov 2019 13:10:01 +0100</lastBuildDate>
     
-	<atom:link href="https://andrewblance.github.io/tags/assembly/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewblance.github.io/tags/programming/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://andrewblance.github.io/post/04-programming1/</guid>
       <description>Bookclub Week 4 Finally, after 3 weeks of Bookclub, we will start to actually write code. As we will see, we might not be able to copy-paste it into an assembler yet and make it run. After today though we&#39;ll be 90% of the way there. We will go over two examples: an easy one and a less-easy one. Looking at these will expand our knowledge of the instruction set of a 6502 and give us a better understanding of what kind of instructions are available.</description>
-    </item>
-    
-    <item>
-      <title>An Introduction to 6502 Assembly!</title>
-      <link>https://andrewblance.github.io/post/01-intro-to-asm/</link>
-      <pubDate>Sun, 13 Oct 2019 17:24:36 +0100</pubDate>
-      
-      <guid>https://andrewblance.github.io/post/01-intro-to-asm/</guid>
-      <description>Bookclub Week 1 For this session of my office&amp;rsquo;s book club I&amp;rsquo;m going to be looking at the 6502 assembly programming language. Each week I&amp;rsquo;ll try explain a little more about assembly and how to write it. I&amp;rsquo;m not sure if the structure will change from week to week, or how I will split up the topics but I like the idea of using my webpage to host the content.</description>
     </item>
     
   </channel>
