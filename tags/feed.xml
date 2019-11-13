@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 13:10:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 17:35:01 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/tags/feed.xml" rel="self" type="application/rss+xml" />
     
@@ -14,25 +14,43 @@
     <item>
       <title>6502</title>
       <link>https://andrewblance.github.io/tags/6502/</link>
-      <pubDate>Sun, 03 Nov 2019 13:10:01 +0100</pubDate>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
       
       <guid>https://andrewblance.github.io/tags/6502/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>appleii</title>
+      <link>https://andrewblance.github.io/tags/appleii/</link>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/tags/appleii/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>assembly</title>
       <link>https://andrewblance.github.io/tags/assembly/</link>
-      <pubDate>Sun, 03 Nov 2019 13:10:01 +0100</pubDate>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
       
       <guid>https://andrewblance.github.io/tags/assembly/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>CA65</title>
+      <link>https://andrewblance.github.io/tags/ca65/</link>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/tags/ca65/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>programming</title>
       <link>https://andrewblance.github.io/tags/programming/</link>
-      <pubDate>Sun, 03 Nov 2019 13:10:01 +0100</pubDate>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
       
       <guid>https://andrewblance.github.io/tags/programming/</guid>
       <description></description>
@@ -41,7 +59,7 @@
     <item>
       <title>tutorial</title>
       <link>https://andrewblance.github.io/tags/tutorial/</link>
-      <pubDate>Sun, 03 Nov 2019 13:10:01 +0100</pubDate>
+      <pubDate>Tue, 12 Nov 2019 17:35:01 +0100</pubDate>
       
       <guid>https://andrewblance.github.io/tags/tutorial/</guid>
       <description></description>

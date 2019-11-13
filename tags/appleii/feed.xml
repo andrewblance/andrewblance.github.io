@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on Andrew Blance</title>
-    <link>https://andrewblance.github.io/tags/programming/</link>
-    <description>Recent content in programming on Andrew Blance</description>
+    <title>appleii on Andrew Blance</title>
+    <link>https://andrewblance.github.io/tags/appleii/</link>
+    <description>Recent content in appleii on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 Nov 2019 17:35:01 +0100</lastBuildDate>
     
-	<atom:link href="https://andrewblance.github.io/tags/programming/feed.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://andrewblance.github.io/tags/appleii/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://andrewblance.github.io/post/05-ca65/</guid>
       <description>Bookclub Week 5 The past weeks we have been learning a lot of theory but, like Pheobe teaching Joey how to play the guitar, we have not put it into practice. This week we will see how to write code, assemble it, and make it run on an emulator.
 This is a multi-stage process. First, we will have to find a way to run any assembled code. The code we write here is for a 6502, not a modern processor, and therefore will not natively run on our machines.</description>
-    </item>
-    
-    <item>
-      <title>Assembly Basics</title>
-      <link>https://andrewblance.github.io/post/04-programming1/</link>
-      <pubDate>Sun, 03 Nov 2019 13:10:01 +0100</pubDate>
-      
-      <guid>https://andrewblance.github.io/post/04-programming1/</guid>
-      <description>Bookclub Week 4 Finally, after 3 weeks of Bookclub, we will start to actually write code. As we will see, we might not be able to copy-paste it into an assembler yet and make it run. After today though we&#39;ll be 90% of the way there. We will go over two examples: an easy one and a less-easy one. Looking at these will expand our knowledge of the instruction set of a 6502 and give us a better understanding of what kind of instructions are available.</description>
     </item>
     
   </channel>
