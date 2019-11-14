@@ -185,7 +185,7 @@ if (!doNotTrack) {
 
 <p>4) go through the installation process.</p>
 
-<p>5) Now, with Ciderpress installed navigate to: <code>~/.wine/drive_c/Program\ Files/</code>.</p>
+<p>5) Now, with Ciderpress installed navigate to: <code>~/.wine/drive_c/Program\ Files/</code>. For me, this was where it was. However, it could be in another folder - potentially <code>Program Files (x86)</code>.</p>
 
 <p>6)  Inside you should be able to navigate to a Ciderpress folder. For me, it was located at <code>Faddensoft/Ciderpress</code></p>
 
@@ -217,7 +217,7 @@ if (!doNotTrack) {
 
 <p>4) give it a nice name, make sure it has the extension <code>.do</code> and save it in a sensible place.</p>
 
-<p>We are now ready to play with our emulator!</p>
+<p>We are now ready to play with our emulator! Throughout this, we might see that AppleWin will not want to open our file, or Ciderpress will open the disks as read only. This may be caused by the other program currently being open and trying to read the disk. To solve this just close AppleWin when trying to use Ciderpress, and vice versa, if you are having problems.</p>
 
 <h2 id="applewin">AppleWin</h2>
 
@@ -354,13 +354,15 @@ DATA: load = RAM, type = rw;
 
 <p>Now, hop into Ciderpress. Here, we want to:</p>
 
-<p>1) click <code>Actions</code> &gt; <code>Add files</code></p>
+<p>1) Open the disk we just made in AppleWin</p>
 
-<p>2) find and select <code>add#066000.bin</code></p>
+<p>2) click <code>Actions</code> &gt; <code>Add files</code></p>
 
-<p>3) under &ldquo;File Attribute Preservation&rdquo; select &ldquo;Use File Attribute Preservation Tags&rdquo; - this is very important, it tells Ciderpress to use the information encoded in the name when adding it to the disk.</p>
+<p>3) find and select <code>add#066000.bin</code></p>
 
-<p>4) Now, press &ldquo;Accept&rdquo;</p>
+<p>4) under &ldquo;File Attribute Preservation&rdquo; select &ldquo;Use File Attribute Preservation Tags&rdquo; - this is very important, it tells Ciderpress to use the information encoded in the name when adding it to the disk.</p>
+
+<p>5) Now, press &ldquo;Accept&rdquo;</p>
 
 <p>Now, in the Ciderpress window, we should see the file &ldquo;ADD&rdquo; in the disk. Hop back to the Apple ii. Lets actually run our program! Note, to see the effect of us modifying the contents of the disk we will need to close the emulator and open it again using wine.</p>
 
