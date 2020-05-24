@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pip on Andrew Blance</title>
+    <link>https://andrewblance.github.io/tags/pip/</link>
+    <description>Recent content in pip on Andrew Blance</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 May 2020 18:19:01 +0100</lastBuildDate>
+    
+	<atom:link href="https://andrewblance.github.io/tags/pip/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>jerryPycia</title>
+      <link>https://andrewblance.github.io/post/06-jerrypycia/</link>
+      <pubDate>Sun, 24 May 2020 18:19:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/post/06-jerrypycia/</guid>
+      <description> What a long strange pip its been.. </description>
+    </item>
+    
+  </channel>
+</rss>
