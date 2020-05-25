@@ -6,18 +6,19 @@
     <description>Recent content in pip on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 18:19:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 11:12:01 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/tags/pip/feed.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>jerryPycia</title>
-      <link>https://andrewblance.github.io/post/06-jerrypycia/</link>
-      <pubDate>Sun, 24 May 2020 18:19:01 +0100</pubDate>
+      <link>https://andrewblance.github.io/post/07-jerrypycia/</link>
+      <pubDate>Mon, 25 May 2020 11:12:01 +0100</pubDate>
       
-      <guid>https://andrewblance.github.io/post/06-jerrypycia/</guid>
-      <description> What a long strange pip its been.. </description>
+      <guid>https://andrewblance.github.io/post/07-jerrypycia/</guid>
+      <description>What a long strange pip its been&amp;hellip; Grateful Dead have performed around 2500 shows. Remarkably, around 2200 of these have been recorded. To explore (most of) this data I have created a python package called jerryPycia. I think thats a really funny name. I&amp;rsquo;m also pretty happy with my &amp;ldquo;long strange pip&amp;rdquo; joke. You can install it using pip, like:
+pip install jerryPycia  Its also available on my Github page.</description>
     </item>
     
   </channel>

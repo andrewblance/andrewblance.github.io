@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+
+<meta name="description" 
+content= "A Grateful Dead python library to explore show data" >
+
+<title>jerryPycia - Andrew Blance</title>
+
+
+<meta name="keywords" 
+content = "python, pip, Grateful Dead" >
+
+
+<meta name="name"
+content = "jerryPycia - Andrew Blance" >
+
+<meta name="author" 
+content="map[]">
+
+<meta name="generator" content="Hugo 0.58.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://andrewblance.github.io/academicons/css/academicons.css"/>
+<link rel="alternate" type="application/rss+xml" href='https://andrewblance.github.io/feed.xml' />
+
+<link rel="stylesheet" href="https://andrewblance.github.io/css/foo.css">
+
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Andrew Blance">
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-149288533-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<link rel="shortcut icon" href="https://andrewblance.github.io//favicon.ico">
+
+</head>
+
+
+
+<body>
+
+<header>
+  <div class="container clearfix">
+
+  
+   <a class="path" href="/">[Andrew Blance]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/posts/">[Posts]</a>
+   <span class="caret"> ; </span>
+  
+   <a class="path" href="/aboutme/">[About_Me]</a>
+   <span class="caret"> ; </span>
+  
+  
+  </div>
+</header>
+
+<div class="container">
+
+
+
+
+<main role="main" class="article">
+  
+
+<article class="single" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2020-05-25">May 25, 2020</time></span>
+
+
+    <span class="key">in</span>
+    <span class="val">
+
+        <a href="/categories/python">Python</a>
+
+        <a href="/categories/gratefuldead">GratefulDead</a>
+
+        <a href="/categories/music">Music</a>
+
+    </span>
+
+
+    <br>
+    <span class="key">tags:</span>
+    <span class="val">
+
+        <a href="/tags/python">python</a>
+
+        <a href="/tags/pip">pip</a>
+
+        <a href="/tags/grateful-dead">Grateful Dead</a>
+
+    </span>
+
+  </div>
+  <h1 class="headline" itemprop="headline">jerryPycia</h1>
+  <section class="body" itemprop="articleBody">
+    
+
+<h2 id="what-a-long-strange-pip-its-been">What a long strange pip its been&hellip;</h2>
+
+<p>Grateful Dead have performed around 2500 shows. Remarkably, around 2200 of these have been recorded. To explore (most of) this data I have created a python package called jerryPycia. I think thats a really funny name. I&rsquo;m also pretty happy with my &ldquo;long strange pip&rdquo; joke. You can install it using pip, like:</p>
+
+<pre><code>pip install jerryPycia
+</code></pre>
+
+<p>Its also available on my <a href="https://github.com/andrewblance/jerryPycia">Github</a> page.</p>
+
+<p>Once you have it installed, you can use it to do a few things. But first:</p>
+
+<pre><code>import jerrypycia as jPy
+data, raw = jPy.grateful_loader()
+</code></pre>
+
+<p>We now have two objects: <code>data</code> and <code>raw</code>. The latter is just the raw data, in the form of a Pandas DataFrame. I&rsquo;ll explain later, but it&rsquo;s not every show they&rsquo;ve played, but its a lot of them.</p>
+
+<p>The first object, <code>data</code> is a object I&rsquo;ve created. I made a class ( <code>Dataset</code>, which is found in <code>jerryPycia.py</code> in the git repo) which &ldquo;holds&rdquo; the csv. What else this class does is give us access to a few methods. These methods allow us to very quickly investigate the data. I&rsquo;m not sure I&rsquo;m totally happy with this structure. However, it means that you don&rsquo;t need to pass anything around, and hopefully it should just work! It also solved another problem I was facing, which I will discuss soon.</p>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="randomshow">.randomShow()</h3>
+
+<p>The first method will query the data and return to us a random show they played.</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-10f4a1341646f567e4beecf67c0c16f5">
+  <a href="https://andrewblance.github.io/post/07-jerrypycia/rS.jpg" class="img-link">
+    <img src="https://andrewblance.github.io/post/07-jerrypycia/rS_hu1e2bebd2cfad0d06dc3e6933486d3ad1_113766_2000x0_resize_q75_box.jpg", class="center">
+  </a>
+  <figcaption id="caption-10f4a1341646f567e4beecf67c0c16f5">
+    random gig
+  </figcaption>
+</figure>
+
+
+<h3 id="nextshow">.nextShow()</h3>
+
+<p>The second method will iterate through the data. Running <code>print(data.nextShow())</code> will give you the first show they played (that&rsquo;s available in my dataset), then if you run it again it will give you the second, and so on. This is done using <code>try</code>, <code>next</code> and <code>except</code>. I think it&rsquo;s a pretty neat syntax.</p>
+
+<pre><code class="language-python">def nextShow(self):
+    &quot;&quot;&quot;
+    iterate through the gigs
+    return as the declared Show() class
+    &quot;&quot;&quot;
+    it = iter(self.iter)
+    try:
+        elem = next(it)
+        return Show(elem[1])
+    except StopIteration:
+        print(&quot;End of list of gigs!&quot;)
+        return
+</code></pre>
+
+<p>To do this you cannot just pass it a DataFrame, it has to be modified using <code>.iterrows()</code> (which is what <code>self.iter</code> is). I didn&rsquo;t want the user to have to deal with creating and managing the two different datasets (the &ldquo;iterable&rdquo; version and the non-iterable) one. Therefore, I thought I would merge it into one class, and let that handle it all.</p>
+
+<h3 id="search-show">.search_show()</h3>
+
+<p>The final method returns a few things. If you pass it a song title, it will give you the first and last time they performed the song, how many times it was performed and a plot including everytime they played it. If you run this command: <code>data.song_search(&quot;Drums&quot;, plot=True)</code> you get the following output:</p>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure role="group" aria-describedby="caption-49dcbf73fef085edb70209e24fc49547">
+  <a href="https://andrewblance.github.io/post/07-jerrypycia/sS.png" class="img-link">
+    <img src="https://andrewblance.github.io/post/07-jerrypycia/sS_hu16a1d4e29fef8bca096385e6d6a638df_144725_2000x0_resize_box_2.png", class="center">
+  </a>
+  <figcaption id="caption-49dcbf73fef085edb70209e24fc49547">
+    song search!
+  </figcaption>
+</figure>
+
+
+<p>Potentially, in the future, I may add something that could output maps or write everything to a pdf report.</p>
+
+<h2 id="data">Data</h2>
+
+<p>I was unable to find a single file that included all the data I would need (though there could be one out there!). To solve this I scraped the data of off this <a href="https://www.cs.cmu.edu/~mleone/gdead/setlists.html">website</a>. Getting the data scraped was an easy process compared to cleaning it (though it was also not that easy). Though the data looks very similar when you go through the site there is actually a lot of small differences. Different years are treated differently a lot of the time. Sometimes it includes who opened the show, or if the did an encore, or it won&rsquo;t include the city (or state or venue or country) they performed in and lots of other things. This all added up to it being non-trivial to fit it all into a nice, clean csv file as all cases needed to be considered differently.</p>
+
+<p>On top of this, this source only includes show from 1972, which means my dataset misses out around 600 shows as far as I can tell. Hopefully in the future I can add these other shows in and add more information to each of them.</p>
+
+<h2 id="poetry">Poetry</h2>
+
+<p>Poetry is a tool to build packages in a nice, easy way. This is what I used take my code and put it on pip. Poetry will create a structure like this:</p>
+
+<pre><code>/jerryPycia
+├── README.md
+├── jerrypycia
+│   └── __init__.py
+│   └── jerryPycia.py
+│   └── datasets
+│       └── GratefulDead.csv
+├── pyproject.toml
+└── tests
+    ├── __init__.py
+    └── test_jerrypycia.py
+</code></pre>
+
+<p><code>pyproject.toml</code> contains what the dependancies are and other general information about your package. All of the &ldquo;code&rdquo; is in <code>jerryPycia.py</code></p>
+
+<p>Poetry also adds a easy way to perform tests on your code. At the moment I have not added any to this project, but that would be an obvious next step to take.</p>
+
+<h2 id="reddit">Reddit</h2>
+
+<p>I asked in Reddit and stack overflow how to improve my code, and got a few responses. One of them told me about the existence of this <a href="https://github.com/jefmsmit/gdshowsdb">repo</a>. I never saw this when I was trying to collect my data, but in it is a database of every performance! Very useful! I may try to incorporate this database into my library as well.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>download my library.</p>
+
+  </section>
+
+  <div style="text-align: center">
+
+    keep up to date:
+    <ul class="icons", style="font-family: FontAwesome">
+    <a href="https://andrewblance.github.io/feed.xml" class="icon fa-rss fa-2x" type="application/rss+xml">
+        <span class="label">RSS</span></a>
+    </ul>
+
+</div>
+
+<br>
+<div class="hero-logo">
+  <img src="/img/base16-eighties.svg">
+</div>
+<br>
+
+
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'andrew-webpage';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+</article>
+
+</main>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2020 Andrew Blance - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

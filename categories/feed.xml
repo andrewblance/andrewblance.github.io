@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Andrew Blance</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 May 2020 18:18:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 11:12:01 +0100</lastBuildDate>
     
 	<atom:link href="https://andrewblance.github.io/categories/feed.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GratefulDead</title>
+      <link>https://andrewblance.github.io/categories/gratefuldead/</link>
+      <pubDate>Mon, 25 May 2020 11:12:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/categories/gratefuldead/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>https://andrewblance.github.io/categories/music/</link>
+      <pubDate>Mon, 25 May 2020 11:12:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://andrewblance.github.io/categories/python/</link>
+      <pubDate>Mon, 25 May 2020 11:12:01 +0100</pubDate>
+      
+      <guid>https://andrewblance.github.io/categories/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Dioramarama</title>
@@ -17,15 +44,6 @@
       <pubDate>Sun, 24 May 2020 18:18:01 +0100</pubDate>
       
       <guid>https://andrewblance.github.io/categories/dioramarama/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Music</title>
-      <link>https://andrewblance.github.io/categories/music/</link>
-      <pubDate>Sun, 24 May 2020 18:18:01 +0100</pubDate>
-      
-      <guid>https://andrewblance.github.io/categories/music/</guid>
       <description></description>
     </item>
     
